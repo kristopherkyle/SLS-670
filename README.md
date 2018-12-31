@@ -1,4 +1,4 @@
-## Welcome to SLS 670: Applied Quantitative Research Methods for Second Language Research
+## Welcome to SLS 670: Quantitative Research Methods for Second Language Research
 
 This site will include tutorials for performing all quantitative analyses (in R/Rstudio) for the course.
 
