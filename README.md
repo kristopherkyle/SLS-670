@@ -6,6 +6,8 @@ This site will NOT be a substitute for the more technical and conceptual aspects
 
 This site WILL show you how to do each analysis in R (and provide a small amount of commentary).
 
+[Tutorial 1: Getting Started with R](https://kristopherkyle.github.io/SLS-670/docs/1_Getting_started.html)
+
 ### Stay tuned for content to be added here
 
 
