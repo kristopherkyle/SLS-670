@@ -9,7 +9,7 @@ This site WILL show you how to do each analysis in R (and provide a small amount
 [Tutorial 1: Getting Started with R](https://kristopherkyle.github.io/SLS-670/docs/1_Getting_started.html)
 
 
-[Tutorial 2: Getting Started with Data Visualization](https://kristopherkyle.github.io/SLS-670/docs/2_getting_started_vis_data.html
+[Tutorial 2: Getting Started with Data Visualization](https://kristopherkyle.github.io/SLS-670/docs/2_getting_started_vis_data.html)
       
 
 ### Stay tuned for more content to be added here
