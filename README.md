@@ -11,7 +11,9 @@ This site WILL show you how to do each analysis in R (and provide a small amount
 
 [Tutorial 2: Getting Started with Data Visualization](https://kristopherkyle.github.io/SLS-670/docs/2_getting_started_vis_data.html)
 
-[Tutorial 3: Loading Data, More Visualization, Checking Assumptions](https://kristopherkyle.github.io/SLS-670/docs/3_Loading_data_assumptions.html)
+[Tutorial 3: Loading Data, More Visualization](https://kristopherkyle.github.io/SLS-670/docs/3_Loading_data_assumptions.html)
+
+[Tutorial 4: Assumptions, Significance, and Effect Size]
       
 
 ### Stay tuned for more content to be added here
