@@ -15,6 +15,7 @@ This site WILL show you how to do each analysis in R (and provide a small amount
 
 [Tutorial 4: Assumptions, Significance, and Effect Size](https://kristopherkyle.github.io/SLS-670/docs/4_Significance_and_Effect_Sizes.html)
       
+[Tutorial 5: Assumptions, Significance, and Effect Size](https://kristopherkyle.github.io/SLS-670/docs/5_Correlations.html)
 
 ### Stay tuned for more content to be added here
 
