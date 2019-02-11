@@ -14,8 +14,10 @@ This site WILL show you how to do each analysis in R (and provide a small amount
 [Tutorial 3: Loading Data, More Visualization](https://kristopherkyle.github.io/SLS-670/docs/3_Loading_data_assumptions.html)
 
 [Tutorial 4: Assumptions, Significance, and Effect Size](https://kristopherkyle.github.io/SLS-670/docs/4_Significance_and_Effect_Sizes.html)
-      
-[Tutorial 5: Correlation](https://kristopherkyle.github.io/SLS-670/docs/5_Correlations.html)
+
+[Tutorial 5: More Practice with Assumptions, Significance, and Effect Size](https://kristopherkyle.github.io/SLS-670/docs/5_distribution_exercises_slides.html)
+
+[Tutorial 6: Correlation](https://kristopherkyle.github.io/SLS-670/docs/6_Correlations.html)
 
 ### Stay tuned for more content to be added here
 
