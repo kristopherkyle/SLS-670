@@ -19,6 +19,8 @@ This site WILL show you how to do each analysis in R (and provide a small amount
 
 [Tutorial 6: Correlation](https://kristopherkyle.github.io/SLS-670/docs/6_Correlations.html)
 
+[Tutorial 7: Linear Regression](https://kristopherkyle.github.io/SLS-670/docs/7_Simple_Regression.html)
+
 
 ### Stay tuned for more content to be added here
 
