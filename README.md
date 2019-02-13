@@ -21,6 +21,7 @@ This site WILL show you how to do each analysis in R (and provide a small amount
 
 [Tutorial 7: Linear Regression](https://kristopherkyle.github.io/SLS-670/docs/7_Simple_Regression.html)
 
+[Tutorial 8: Multiple Linear Regression](https://kristopherkyle.github.io/SLS-670/docs/8_Multiple_Regression.html)
 
 ### Stay tuned for more content to be added here
 
