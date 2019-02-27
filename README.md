@@ -23,7 +23,7 @@ This site WILL show you how to do each analysis in R (and provide a small amount
 
 [Tutorial 8: Multiple Linear Regression](https://kristopherkyle.github.io/SLS-670/docs/8_Multiple_Regression.html)
 
-[Tutorial 9: Introduction to Differences between Two Independent Samples (https://kristopherkyle.github.io/SLS-670/docs/9_Two_Independent_Samples.html)
+[Tutorial 9: Introduction to Differences between Two Independent Samples] (https://kristopherkyle.github.io/SLS-670/docs/9_Two_Independent_Samples.html)
 
 ### Stay tuned for more content to be added here
 
