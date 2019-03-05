@@ -25,6 +25,8 @@ This site WILL show you how to do each analysis in R (and provide a small amount
 
 [Tutorial 9: Introduction to Differences between Two Independent Samples](https://kristopherkyle.github.io/SLS-670/docs/9_Two_Independent_Samples.html)
 
+[Tutorial 10: Introduction to Differences between Two Paired Samples](https://kristopherkyle.github.io/SLS-670/docs/10_Two_Dependent_Samples.html)
+
 ### Stay tuned for more content to be added here!
 
 
