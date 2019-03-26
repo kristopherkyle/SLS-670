@@ -252,6 +252,36 @@ summary(mydata)</code></pre>
 <div id="conducting-the-analysis" class="section level3">
 <h3>Conducting the analysis</h3>
 <p>First, we will fit a linear regression to demonstrate that an ANOVA and a linear regression are related analyses. Then, we will conduct an ANOVA with post-hoc tests and provide some non-parametric alternatives.</p>
+</div>
+<div id="getting-descriptive-statistics" class="section level3">
+<h3>Getting descriptive statistics</h3>
+<p>First, we will get our descriptive statistics.</p>
+<pre class="r"><code>library(psych)</code></pre>
+<pre><code>## 
+## Attaching package: 'psych'</code></pre>
+<pre><code>## The following objects are masked from 'package:ggplot2':
+## 
+##     %+%, alpha</code></pre>
+<pre class="r"><code>describeBy(mydata$Meaningfulness_AW,mydata$Proficiency)</code></pre>
+<pre><code>## 
+##  Descriptive statistics by group 
+## group: Beginner
+##    vars  n   mean    sd median trimmed   mad    min   max range skew
+## X1    1 61 385.82 16.68 385.13  384.74 15.29 349.32 431.1 81.78 0.54
+##    kurtosis   se
+## X1     0.11 2.14
+## -------------------------------------------------------- 
+## group: High
+##    vars  n   mean    sd median trimmed   mad    min    max range  skew
+## X1    1 68 367.01 13.73 367.64  367.76 13.04 326.46 398.85 72.39 -0.52
+##    kurtosis   se
+## X1     0.55 1.67
+## -------------------------------------------------------- 
+## group: Int
+##    vars   n   mean    sd median trimmed   mad    min    max  range skew
+## X1    1 111 376.32 18.18 375.45   375.9 17.73 325.37 453.66 128.29 0.57
+##    kurtosis   se
+## X1     2.15 1.73</code></pre>
 <div id="fitting-a-linear-regression" class="section level4">
 <h4>Fitting a linear regression</h4>
 <p>First, we will run a linear model (i.e., a regression) for comparison.</p>
@@ -330,13 +360,32 @@ summary(mydata_effs_BI)</code></pre>
 ##                 Mean   :379.7    
 ##                 3rd Qu.:390.6    
 ##                 Max.   :453.7</code></pre>
-<pre class="r"><code>library(psych)</code></pre>
-<pre><code>## 
-## Attaching package: 'psych'</code></pre>
-<pre><code>## The following objects are masked from 'package:ggplot2':
-## 
-##     %+%, alpha</code></pre>
-<pre class="r"><code>cohen.d(mydata_effs_BI,&quot;Proficiency&quot;)</code></pre>
+<pre class="r"><code>#create new df with only Beginner and High
+mydata_effs_BH &lt;- mydata %&gt;%
+  filter(Proficiency == &quot;Beginner&quot; | Proficiency == &quot;High&quot;) %&gt;%
+  select(Proficiency, Meaningfulness_AW)
+summary(mydata_effs_BH)</code></pre>
+<pre><code>##    Proficiency Meaningfulness_AW
+##  Beginner:61   Min.   :326.5    
+##  High    :68   1st Qu.:364.5    
+##  Int     : 0   Median :375.1    
+##                Mean   :375.9    
+##                3rd Qu.:385.4    
+##                Max.   :431.1</code></pre>
+<pre class="r"><code>#create new df with only Int and High
+mydata_effs_IH &lt;- mydata %&gt;%
+  filter(Proficiency == &quot;Int&quot; | Proficiency == &quot;High&quot;) %&gt;%
+  select(Proficiency, Meaningfulness_AW)
+summary(mydata_effs_IH)</code></pre>
+<pre><code>##    Proficiency  Meaningfulness_AW
+##  Beginner:  0   Min.   :325.4    
+##  High    : 68   1st Qu.:361.3    
+##  Int     :111   Median :373.1    
+##                 Mean   :372.8    
+##                 3rd Qu.:382.8    
+##                 Max.   :453.7</code></pre>
+<pre class="r"><code>#note, this uses the psych package:
+cohen.d(mydata_effs_BI,&quot;Proficiency&quot;)</code></pre>
 <pre><code>## Call: cohen.d(x = mydata_effs_BI, group = &quot;Proficiency&quot;)
 ## Cohen d statistic of difference between two means
 ##                   lower effect upper
@@ -347,7 +396,40 @@ summary(mydata_effs_BI)</code></pre>
 ## r equivalent of difference between two means
 ## Meaningfulness_AW 
 ##             -0.25</code></pre>
-<p>To get the effect sizes for the rest of the contrasts, we would need to repeat this process with the other group combinations (“Beginner” to “High” and “Int” to “High”).</p>
+<p>To get the effect sizes for the rest of the contrasts, we repeat this process with the other group combinations (“Beginner” to “High” and “Int” to “High”).</p>
+<pre class="r"><code>#create new df with only Beginner and High
+mydata_effs_BH &lt;- mydata %&gt;%
+  filter(Proficiency == &quot;Beginner&quot; | Proficiency == &quot;High&quot;) %&gt;%
+  select(Proficiency, Meaningfulness_AW)
+
+#create new df with only Int and High
+mydata_effs_IH &lt;- mydata %&gt;%
+  filter(Proficiency == &quot;Int&quot; | Proficiency == &quot;High&quot;) %&gt;%
+  select(Proficiency, Meaningfulness_AW)
+
+#note, this uses the psych package:
+cohen.d(mydata_effs_BH,&quot;Proficiency&quot;)</code></pre>
+<pre><code>## Call: cohen.d(x = mydata_effs_BH, group = &quot;Proficiency&quot;)
+## Cohen d statistic of difference between two means
+##                   lower effect upper
+## Meaningfulness_AW  -1.7   -1.2 -0.83
+## 
+## Multivariate (Mahalanobis) distance between groups
+## [1] 1.2
+## r equivalent of difference between two means
+## Meaningfulness_AW 
+##             -0.53</code></pre>
+<pre class="r"><code>cohen.d(mydata_effs_IH,&quot;Proficiency&quot;)</code></pre>
+<pre><code>## Call: cohen.d(x = mydata_effs_IH, group = &quot;Proficiency&quot;)
+## Cohen d statistic of difference between two means
+##                   lower effect upper
+## Meaningfulness_AW  0.24   0.56  0.88
+## 
+## Multivariate (Mahalanobis) distance between groups
+## [1] 0.56
+## r equivalent of difference between two means
+## Meaningfulness_AW 
+##              0.26</code></pre>
 </div>
 </div>
 <div id="checking-assumptions" class="section level3">
@@ -362,12 +444,12 @@ summary(mydata_effs_BI)</code></pre>
 <pre><code>## Loading required package: carData</code></pre>
 <pre><code>## 
 ## Attaching package: 'car'</code></pre>
-<pre><code>## The following object is masked from 'package:psych':
-## 
-##     logit</code></pre>
 <pre><code>## The following object is masked from 'package:dplyr':
 ## 
 ##     recode</code></pre>
+<pre><code>## The following object is masked from 'package:psych':
+## 
+##     logit</code></pre>
 <pre class="r"><code>leveneTest(Meaningfulness_AW~Proficiency, data = mydata)</code></pre>
 <pre><code>## Levene's Test for Homogeneity of Variance (center = median)
 ##        Df F value Pr(&gt;F)
