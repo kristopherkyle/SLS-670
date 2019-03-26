@@ -308,7 +308,7 @@ summary(anova_model)</code></pre>
 ## High-Beginner -18.801696 -25.72585 -11.877543 0.0000000
 ## Int-Beginner   -9.491098 -15.74900  -3.233192 0.0012211
 ## Int-High        9.310598   3.26413  15.357066 0.0010025</code></pre>
-<p>To get an effect size for each contrast, we will have to do a little more work. Below, we create a new dataframe using the “filter” and “select” functions of dplyr to select only rows that have a Proficiency value of “Beginner” or “Int” (using filter), and only the columns Proficiency and Meaningfulness_AW. We then use the function “cohen.d” in the psych package to calculat the effect size between the “Beginner” and “Int” groups. As we see below, the effect between these groups is .25, which represents a small effect.</p>
+<p>To get an effect size for each contrast, we will have to do a little more work. Below, we create a new dataframe using the “filter” and “select” functions of dplyr to select only rows that have a Proficiency value of “Beginner” or “Int” (using filter), and only the columns Proficiency and Meaningfulness_AW. We then use the function “cohen.d” in the psych package to calculat the effect size between the “Beginner” and “Int” groups. As we see below, the effect between these groups is .54, which represents a medium effect.</p>
 <pre class="r"><code>library(dplyr)</code></pre>
 <pre><code>## 
 ## Attaching package: 'dplyr'</code></pre>
