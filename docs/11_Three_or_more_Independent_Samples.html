@@ -322,7 +322,20 @@ summary(anova_model)</code></pre>
 <pre class="r"><code>etaSquared(anova_model, type = 3)</code></pre>
 <pre><code>##               eta.sq eta.sq.part
 ## Proficiency 0.147645    0.147645</code></pre>
-<p>The results indicate that there are indeed differences between our groups (p = .000000006), and that these differences are meaningful (eta squared = 0.148 - note that this is the same as our linear regression), but they don’t tell us where those differences are.</p>
+<p>Another option to the “lsr” package for running effect sizes is the “sjstats” package, which also computes omega-squared.</p>
+<pre class="r"><code>library(sjstats)</code></pre>
+<pre><code>## 
+## Attaching package: 'sjstats'</code></pre>
+<pre><code>## The following objects are masked from 'package:psych':
+## 
+##     pca, phi</code></pre>
+<pre class="r"><code>eta_sq(anova_model)</code></pre>
+<pre><code>##          term etasq
+## 1 Proficiency 0.148</code></pre>
+<pre class="r"><code>omega_sq(anova_model)</code></pre>
+<pre><code>##          term omegasq
+## 1 Proficiency    0.14</code></pre>
+<p>The results indicate that there are indeed differences between our groups (p = .000000006), and that these differences are meaningful (eta squared = 0.148 - note that this is the same as our linear regression, omega squared = 1.40), but they don’t tell us where those differences are.</p>
 </div>
 <div id="conducting-pairwise-comparisons" class="section level4">
 <h4>Conducting pairwise comparisons</h4>
@@ -511,6 +524,9 @@ cohen.d(mydata_effs_BH,&quot;Proficiency&quot;)</code></pre>
 <pre><code>## The following object is masked from 'package:car':
 ## 
 ##     bootCase</code></pre>
+<pre><code>## The following object is masked from 'package:sjstats':
+## 
+##     se</code></pre>
 <pre><code>## The following object is masked from 'package:psych':
 ## 
 ##     headtail</code></pre>
