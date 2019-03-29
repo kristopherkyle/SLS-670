@@ -29,6 +29,8 @@ This site WILL show you how to do each analysis in R (and provide a small amount
 
 [Tutorial 11: Introduction to Differences between Three or More Independent Samples](https://kristopherkyle.github.io/SLS-670/docs/11_Three_or_more_Independent_Samples.html)
 
+[Tutorial 12: Factorial Designs](https://kristopherkyle.github.io/SLS-670/docs/12_Factorial_ANOVAs.html)
+
 ### Stay tuned for more content to be added here!
 
 
