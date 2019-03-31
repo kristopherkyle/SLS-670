@@ -31,6 +31,7 @@ This site WILL show you how to do each analysis in R (and provide a small amount
 
 [Tutorial 12: Factorial Designs](https://kristopherkyle.github.io/SLS-670/docs/12_Factorial_ANOVAs.html)
 
+[Tutorial 13: Repeated Measures ANOVA](https://kristopherkyle.github.io/SLS-670/docs/13_Repeated_Measures_ANOVA.html)
 ### Stay tuned for more content to be added here!
 
 
