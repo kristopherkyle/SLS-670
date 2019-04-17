@@ -36,6 +36,9 @@ This site WILL show you how to do each analysis in R (and provide a small amount
 [Tutorial 14: Linear Mixed Effects Models](https://kristopherkyle.github.io/SLS-670/docs/14_Linear_Mixed_Effects_Models.html)
 
 [Tutorial 15: Discriminant Function Analysis](https://kristopherkyle.github.io/SLS-670/docs/15_DFA.html)
+
+[Tutorial 16: Logistic Regression](https://kristopherkyle.github.io/SLS-670/docs/16_Logistic_Regression.html)
+
 ### Stay tuned for more content to be added here!
 
 
