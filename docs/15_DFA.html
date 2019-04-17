@@ -90,8 +90,14 @@ img {
 .tabbed-pane {
   padding-top: 12px;
 }
+.html-widget {
+  margin-bottom: 20px;
+}
 button.code-folding-btn:focus {
   outline: none;
+}
+summary {
+  display: list-item;
 }
 </style>
 
@@ -100,14 +106,74 @@ button.code-folding-btn:focus {
 <div class="container-fluid main-container">
 
 <!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
 <script>
 $(document).ready(function () {
   window.buildTabsets("TOC");
 });
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
 </script>
 
 <!-- code folding -->
-
 
 
 
@@ -315,6 +381,60 @@ table(test$lda,test$Proficiency)</code></pre>
 #https://rpubs.com/Nolan/298913
 #https://blog.revolutionanalytics.com/2016/03/com_class_eval_metrics_r.html</code></pre>
 </div>
+</div>
+<div id="creating-a-predictor-model-with-multiple-predictors" class="section level3">
+<h3>Creating a predictor model with multiple predictors</h3>
+<p>Adding predictors to our model is one way to potentially increase prediction accuracy. Below, we add L1_Word_Reaction_Time to the model, which prompts the creation of a second discriminate factor.</p>
+<pre class="r"><code>lda.tmodel2 &lt;- lda(Proficiency ~ Meaningfulness_AW + L1_Word_Reaction_Time, train)
+lda.tmodel2 #show results</code></pre>
+<pre><code>## Call:
+## lda(Proficiency ~ Meaningfulness_AW + L1_Word_Reaction_Time, 
+##     data = train)
+## 
+## Prior probabilities of groups:
+##  Beginner      High       Int 
+## 0.2439024 0.2378049 0.5182927 
+## 
+## Group means:
+##          Meaningfulness_AW L1_Word_Reaction_Time
+## Beginner          386.6861              613.1041
+## High              365.2695              620.2764
+## Int               377.2018              615.9499
+## 
+## Coefficients of linear discriminants:
+##                               LD1         LD2
+## Meaningfulness_AW     -0.04739993 -0.04073454
+## L1_Word_Reaction_Time  0.04448248 -0.12092585
+## 
+## Proportion of trace:
+##    LD1    LD2 
+## 0.9982 0.0018</code></pre>
+<p>Check for p value with ANCOVA:</p>
+<pre class="r"><code>library(&quot;lsr&quot;)
+anova_model2 &lt;- aov(Meaningfulness_AW  ~ Proficiency + L1_Word_Reaction_Time, data = train)
+summary(anova_model2)</code></pre>
+<pre><code>##                        Df Sum Sq Mean Sq F value   Pr(&gt;F)    
+## Proficiency             2   9106    4553   17.67 1.16e-07 ***
+## L1_Word_Reaction_Time   1   5749    5749   22.32 5.03e-06 ***
+## Residuals             160  41218     258                     
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+<p>We can check our prediction accuracy below:</p>
+<pre class="r"><code>lda.tresults2 &lt;- predict(lda.tmodel2)
+train$lda2 &lt;- lda.tresults2$class
+train.table2 &lt;- table(train$lda2,train$Proficiency)
+train.table2</code></pre>
+<pre><code>##           
+##            Beginner High Int
+##   Beginner        6    0   6
+##   High            2    5   8
+##   Int            32   34  71</code></pre>
+<pre class="r"><code>n2 = sum(train.table2) #number of essays
+diag2 = diag(train.table2) # number of correctly classified instances per class 
+macro_acc2 = sum(diag2)/n #macro accuracy
+print(macro_acc2)</code></pre>
+<pre><code>## [1] 0.5</code></pre>
+<p>Now, finish these classification results for the training set, and then apply them to the test set.</p>
 </div>
 </div>
 
