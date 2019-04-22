@@ -39,6 +39,8 @@ This site WILL show you how to do each analysis in R (and provide a small amount
 
 [Tutorial 16: Logistic Regression](https://kristopherkyle.github.io/SLS-670/docs/16_Logistic_Regression.html)
 
+[Tutorial 17: Frequency Distributions](https://kristopherkyle.github.io/SLS-670/docs/17_Frequency_Distributions.html)
+
 ### Stay tuned for more content to be added here!
 
 
