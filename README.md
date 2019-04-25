@@ -41,6 +41,9 @@ This site WILL show you how to do each analysis in R (and provide a small amount
 
 [Tutorial 17: Frequency Distributions](https://kristopherkyle.github.io/SLS-670/docs/17_Frequency_Distributions.html)
 
+[Tutorial 18: Frequency Distributions](https://kristopherkyle.github.io/SLS-670/docs/18_Comparing_Corpus_Frequencies.html)
+
+
 ### Stay tuned for more content to be added here!
 
 
